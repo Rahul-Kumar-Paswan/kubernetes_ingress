@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+spec:
+  rules:
+    - host: rahul.com
+      http:
+        paths:
+          - path: /login
+            pathType: Prefix
+            backend:
+              service:
+                name: app-service  
+                port:
+                  number: 5000
+          - path: /signup
+            pathType: Prefix
+            backend:
+              service:
+                name: app-service  
+                port:
+                  number: 5000
+          - path: /dashboard
+            pathType: Prefix
+            backend:
+              service:
+                name: app-service  
+                port:
+                  number: 5000
